@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Configuration monitorInterval="10" status="WARN">
+    <Appenders>
+        <Console name="STD_OUT" target="SYSTEM_OUT" />
+    </Appenders>
+    <Loggers>
+        <Root level="debug">
+            <AppenderRef ref="STD_OUT"/>
+        </Root>
+    </Loggers>
+</Configuration>

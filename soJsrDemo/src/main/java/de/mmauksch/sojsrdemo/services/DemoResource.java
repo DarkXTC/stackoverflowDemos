@@ -19,6 +19,12 @@ public class DemoResource {
     
     @GET
     @RolesAllowed("user")
+    @Path("/auth")
+    public Response auth() {
+        return Response.ok("doing authorized stuff").build();
+    }
+    
+    @GET
     public Response demo() {
         return Response.ok("doing important stuff").build();
     }

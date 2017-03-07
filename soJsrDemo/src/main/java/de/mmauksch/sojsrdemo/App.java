@@ -5,6 +5,7 @@
  */
 package de.mmauksch.sojsrdemo;
 
+import de.mmauksch.sojsrdemo.auth.AuthenticationFilter;
 import java.net.URI;
 import org.glassfish.grizzly.http.server.HttpServer;
 import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory;
@@ -18,6 +19,7 @@ public class App {
     public static void main(String[] args) {
         Defaultconfig config = new Defaultconfig();
         config.register(RolesAllowedDynamicFeature.class);
+        config.register(AuthenticationFilter.class);
         HttpServer server = GrizzlyHttpServerFactory.createHttpServer(URI.create("http://localhost:9000"), config);
     }
 }
